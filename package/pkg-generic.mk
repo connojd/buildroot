@@ -83,13 +83,18 @@ endef
 GLOBAL_INSTRUMENTATION_HOOKS += step_pkg_size
 
 # Relies on step_pkg_size, so must be after
+#define check_bin_arch
+#	$(if $(filter end-install-target,$(1)-$(2)),\
+#		support/scripts/check-bin-arch -p $(3) \
+#			-l $(BUILD_DIR)/packages-file-list.txt \
+#			$(foreach i,$($(PKG)_BIN_ARCH_EXCLUDE),-i "$(i)") \
+#			-r $(TARGET_READELF) \
+#			-a $(BR2_READELF_ARCH_NAME))
+#endef
+
 define check_bin_arch
 	$(if $(filter end-install-target,$(1)-$(2)),\
-		support/scripts/check-bin-arch -p $(3) \
-			-l $(BUILD_DIR)/packages-file-list.txt \
-			$(foreach i,$($(PKG)_BIN_ARCH_EXCLUDE),-i "$(i)") \
-			-r $(TARGET_READELF) \
-			-a $(BR2_READELF_ARCH_NAME))
+	    /usr/bin/true)
 endef
 
 GLOBAL_INSTRUMENTATION_HOOKS += check_bin_arch
