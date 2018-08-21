@@ -1,0 +1,12 @@
+diff --git a/xen/arch/x86/Rules.mk b/xen/arch/x86/Rules.mk
+index 70e9d8f5cf..2f5314ebad 100644
+--- a/xen/arch/x86/Rules.mk
++++ b/xen/arch/x86/Rules.mk
+@@ -7,6 +7,7 @@ CFLAGS += -I$(BASEDIR)/include
+ CFLAGS += -I$(BASEDIR)/include/asm-x86/mach-generic
+ CFLAGS += -I$(BASEDIR)/include/asm-x86/mach-default
+ CFLAGS += -DXEN_IMG_OFFSET=$(XEN_IMG_OFFSET)
++CFLAGS += -U__OBJECT_LABEL__
+ CFLAGS += '-D__OBJECT_LABEL__=$(subst /,$$,$(subst -,_,$(subst $(BASEDIR)/,,$(CURDIR))/$@))'
+ 
+ # Prevent floating-point variables from creeping into Xen.
