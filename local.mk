@@ -1,0 +1,3 @@
+NDVM_OVERRIDE_SRCDIR=/home/dev/ndvm
+LINUX_OVERRIDE_SRCDIR=/home/dev/linux
+LINUX_HEADERS_OVERRIDE_SRCDIR=/home/dev/linux
