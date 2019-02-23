@@ -1,0 +1,6 @@
+
+config BR2_PACKAGE_VPNVM
+	bool "vpnvm"
+	depends on BR2_USE_MMU
+	help
+	  The VPN virtual machine

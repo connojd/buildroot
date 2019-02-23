@@ -1,3 +1,4 @@
 NDVM_OVERRIDE_SRCDIR=/home/dev/ndvm
+VPNVM_OVERRIDE_SRCDIR=/home/dev/vpnvm
 LINUX_OVERRIDE_SRCDIR=/home/dev/linux
 LINUX_HEADERS_OVERRIDE_SRCDIR=/home/dev/linux
